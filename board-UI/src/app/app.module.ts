@@ -13,12 +13,18 @@ import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { en_US } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
+import { JavascriptComponent } from './pages/javascript/javascript.component';
+import { AngularComponent } from './pages/angular/angular.component';
+import { LoginComponent } from './pages/login/login.component';
 
 registerLocaleData(en);
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    JavascriptComponent,
+    AngularComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

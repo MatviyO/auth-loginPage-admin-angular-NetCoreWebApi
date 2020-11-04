@@ -15,6 +15,8 @@ import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 
 import { LoginComponent } from './pages/login/login.component';
+import {MatSelectModule} from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 registerLocaleData(en);
 
@@ -31,7 +33,8 @@ registerLocaleData(en);
     NzMenuModule,
     FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatFormFieldModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]

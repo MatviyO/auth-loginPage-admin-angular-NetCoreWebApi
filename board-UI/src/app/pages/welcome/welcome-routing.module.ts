@@ -9,7 +9,7 @@ const routes: Routes = [
       { path: 'javascript', component: JavascriptComponent},
       { path: 'angular', component: AngularComponent},
     ] },
-  {path: '', redirectTo: 'javascript', pathMatch: 'full' }
+  {path: '', redirectTo: '/javascript', pathMatch: 'full' }
 ];
 
 @NgModule({

@@ -1,8 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
-using Amazon.Util.Internal.PlatformServices;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -14,6 +15,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using WebAPI.Models;
+using Microsoft.IdentityModel.Tokens;
 
 namespace WebAPI
 {
@@ -29,7 +31,7 @@ namespace WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.Configure<ApplicationSettings>(Configuration.GetSection("ApplicationSettings"));
+            services.Configure<ApplicationsSettings>(Configuration.GetSection("ApplicationSettings"));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Latest);
             services.AddDbContext<AuthenticationContext>(option =>
             {
@@ -44,6 +46,29 @@ namespace WebAPI
                 Options.Password.RequireLowercase = false;
                 Options.Password.RequireLowercase = false;
                 Options.Password.RequiredLength = 4;
+            });
+            services.AddCors();
+
+            var key = Encoding.UTF8.GetBytes(Configuration["ApplicationSettings: JWT_Secret "].ToString());
+            services.AddAuthentication(set =>
+            {
+                set.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                set.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                set.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+               
+            }
+            ).AddJwtBearer(x =>
+            {
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = false;
+                x.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = false,
+                    ValidateAudience = false,
+                    ClockSkew = TimeSpan.Zero
+                };
             });
         }
 

@@ -5,11 +5,15 @@ using System.Threading.Tasks;
 using Amazon.Util.Internal.PlatformServices;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
+using WebAPI.Models;
 
 namespace WebAPI
 {
@@ -22,16 +26,27 @@ namespace WebAPI
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.Configure<ApplicationSettings>(ConfigurationSettings.GetSection("ApplicationSettings"));
-
+            services.Configure<ApplicationSettings>(Configuration.GetSection("ApplicationSettings"));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Latest);
+            services.AddDbContext<AuthenticationContext>(option =>
+            {
+                option.UseSqlServer(Configuration.GetConnectionString("IdentityConnection"));
+            });
+            services.AddDefaultIdentity<ApplicationUser>()
+                .AddEntityFrameworkStores<AuthenticationContext>();
+            services.Configure<IdentityOptions>(Options =>
+            {
+                Options.Password.RequireDigit = false;
+                Options.Password.RequireNonAlphanumeric = false;
+                Options.Password.RequireLowercase = false;
+                Options.Password.RequireLowercase = false;
+                Options.Password.RequiredLength = 4;
+            });
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())

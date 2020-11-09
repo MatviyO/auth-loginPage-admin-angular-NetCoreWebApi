@@ -24,7 +24,6 @@
     ".NETCoreApp,Version=v3.1": {
       "WebAPI/1.0.0": {
         "dependencies": {
-          "AWSSDK.Core": "3.5.1.32",
           "Microsoft.AspNetCore.Authentication": "2.2.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "3.1.9",
           "Microsoft.AspNetCore.Authorization": "3.1.9",
@@ -289,17 +288,6 @@
         },
         "compile": {
           "WebAPI.dll": {}
-        }
-      },
-      "AWSSDK.Core/3.5.1.32": {
-        "runtime": {
-          "lib/netcoreapp3.1/AWSSDK.Core.dll": {
-            "assemblyVersion": "3.3.0.0",
-            "fileVersion": "3.5.1.32"
-          }
-        },
-        "compile": {
-          "lib/netcoreapp3.1/AWSSDK.Core.dll": {}
         }
       },
       "Microsoft.AspNetCore.Authentication/2.2.0": {
@@ -3338,13 +3326,6 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
-    },
-    "AWSSDK.Core/3.5.1.32": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-rNxli5HjbQdFmibqHQhXgOtIS35A8Gt6k8XWyJAse/QoChfbsTqXjzKnws24DMUVK3dzf3knpD1mgpXS9XJ1zA==",
-      "path": "awssdk.core/3.5.1.32",
-      "hashPath": "awssdk.core.3.5.1.32.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication/2.2.0": {
       "type": "package",

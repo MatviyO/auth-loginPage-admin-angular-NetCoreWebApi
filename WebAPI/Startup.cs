@@ -12,10 +12,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using WebAPI.Models;
+
 using Microsoft.IdentityModel.Tokens;
+using WebAPI.Models;
 
 namespace WebAPI
 {
@@ -35,7 +34,8 @@ namespace WebAPI
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Latest);
             services.AddDbContext<AuthenticationContext>(option =>
             {
-                option.UseSqlServer(Configuration.GetConnectionString("IdentityConnection"));
+                option.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
+                    x => x.MigrationsAssembly("WebAPI"));
             });
             services.AddDefaultIdentity<ApplicationUser>()
                 .AddEntityFrameworkStores<AuthenticationContext>();

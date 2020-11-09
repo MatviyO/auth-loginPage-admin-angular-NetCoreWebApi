@@ -32,7 +32,6 @@ D:\github\auth-loginPage-admin-angular-NetCoreWebApi\WebAPI\bin\Debug\netcoreapp
 D:\github\auth-loginPage-admin-angular-NetCoreWebApi\WebAPI\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
 D:\github\auth-loginPage-admin-angular-NetCoreWebApi\WebAPI\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
 D:\github\auth-loginPage-admin-angular-NetCoreWebApi\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.csproj.CopyComplete
-D:\github\auth-loginPage-admin-angular-NetCoreWebApi\WebAPI\bin\Debug\netcoreapp3.1\AWSSDK.Core.dll
 D:\github\auth-loginPage-admin-angular-NetCoreWebApi\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 D:\github\auth-loginPage-admin-angular-NetCoreWebApi\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
 D:\github\auth-loginPage-admin-angular-NetCoreWebApi\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll

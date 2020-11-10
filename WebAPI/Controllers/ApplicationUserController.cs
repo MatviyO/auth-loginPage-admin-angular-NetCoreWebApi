@@ -33,7 +33,7 @@ namespace WebAPI.Controllers
         }
         [HttpPost]
         [Route("Register")]
-        public async Task<object> PostApplicationUser(ApplicationuserModel model)
+        public async Task<object> PostApplicationUser(ApplicationUserModel model)
         {
             var applicationUser = new ApplicationUser()
             {

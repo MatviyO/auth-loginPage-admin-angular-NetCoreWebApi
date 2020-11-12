@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\github\\auth-loginPage-admin-angular-NetCoreWebApi\\WebAPI\\WebAPI.csproj": {}
+    "C:\\Users\\User\\Code\\github\\auth-loginPage-admin-angular-NetCoreWebApi\\WebAPI\\WebAPI.csproj": {}
   },
   "projects": {
-    "D:\\github\\auth-loginPage-admin-angular-NetCoreWebApi\\WebAPI\\WebAPI.csproj": {
+    "C:\\Users\\User\\Code\\github\\auth-loginPage-admin-angular-NetCoreWebApi\\WebAPI\\WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\github\\auth-loginPage-admin-angular-NetCoreWebApi\\WebAPI\\WebAPI.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Code\\github\\auth-loginPage-admin-angular-NetCoreWebApi\\WebAPI\\WebAPI.csproj",
         "projectName": "WebAPI",
-        "projectPath": "D:\\github\\auth-loginPage-admin-angular-NetCoreWebApi\\WebAPI\\WebAPI.csproj",
+        "projectPath": "C:\\Users\\User\\Code\\github\\auth-loginPage-admin-angular-NetCoreWebApi\\WebAPI\\WebAPI.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\github\\auth-loginPage-admin-angular-NetCoreWebApi\\WebAPI\\obj\\",
+        "outputPath": "C:\\Users\\User\\Code\\github\\auth-loginPage-admin-angular-NetCoreWebApi\\WebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
